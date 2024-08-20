@@ -17,7 +17,9 @@ import { ref } from 'vue'
 
 const message = ref('')
 
-const arr = ref((JSON.parse(localStorage.arr) || []) as any[]) 
+const locaArr = localStorage.arr ? JSON.parse(localStorage.arr) : []
+
+const arr = ref(locaArr as any[]) 
 
 const add = () => {
   arr.value.push(

@@ -1,5 +1,8 @@
 <template>
 
+<VueCalc></VueCalc>
+
+
   <HeaderComp>
     <p>Вложенный тег</p>
     <hr>
@@ -11,27 +14,18 @@
 
   <HeaderComp />
 
-  <ul>
-    <!-- <li v-for="todo, index of todos" :key="index">{{ todo.text }}</li> -->
-    <template v-for="todo, index of todos" :key="todo.id">
-      <ToDoElement :todo="todo" :index="index"/> 
-    </template>
-  </ul>
-
+  <ToDoElement/> 
+  
 </template>
 
 <script setup lang="ts">
 import HeaderComp from './components/HeaderComponent.vue'
 import ToDoElement from './components/ToDoElement.vue'
+
 import {ref} from 'vue'
+import VueCalc from './components/VueCalc.vue';
 
 const message = ref('')
-const todos = ref([
-  { id: 0, text: 'Learn JavaScript' },
-  { id: 1, text: 'Learn JavaScript' },
-  { id: 2, text: 'Learn Vue' },
-  { id: 3, text: 'Build something awesome' }
-])
 
 message.value = 'Hello Vue!'
 
