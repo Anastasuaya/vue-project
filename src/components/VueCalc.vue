@@ -3,8 +3,8 @@
 <template>
   <div ref="calc">
     <div style="margin: 0 0 10px 20px;">
-      <div style="font-size: 10px; height: 12px; text-align: left;">{{ calcStr }}</div>
-      <div style="font-size: 10px; height: 12px; text-align: left;">{{ calcCurrentStr }}</div>
+      <div style="font-size: 22px; height: 12px; text-align: left;">{{ calcStr }}</div>
+      <div style="font-size: 22px; height: 12px; text-align: left; padding: 10px;">{{ calcCurrentStr }}</div>
     </div>
     <div style="display: flex;">
       <button @click="calcEvents('1')">1</button>
@@ -27,9 +27,9 @@
       <button @click="calcEvents('-')">-</button>
     </div>
     <div style="display:flex">
-      <bitton @click="calcEvents('/')">/</bitton>
-      <bitton @click="calcEvents('*')">*</bitton>
-      <bitton @click="calcEvents('=')">=</bitton>
+      <button @click="calcEvents('/')">/</button>
+      <button @click="calcEvents('*')">*</button>
+      <button @click="calcEvents('=')">=</button>
     </div>
   </div>
 </template>

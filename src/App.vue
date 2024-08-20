@@ -21,9 +21,8 @@
 <script setup lang="ts">
 import HeaderComp from './components/HeaderComponent.vue'
 import ToDoElement from './components/ToDoElement.vue'
-
 import {ref} from 'vue'
-import VueCalc from './components/VueCalc.vue';
+import VueCalc from './components/VueCalc.vue'
 
 const message = ref('')
 
