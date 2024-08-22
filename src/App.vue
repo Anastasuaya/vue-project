@@ -13,7 +13,6 @@
 <form @submit.prevent="addToDo">
     <input v-model="newTodo" type="text">
   </form>
-
   
 
   <HeaderComp>
