@@ -1,6 +1,5 @@
 <template>
-
-  <div>
+  <div id="game">
 
     <h1>Угадай число</h1>
 
@@ -12,16 +11,18 @@
 
     <p v-if="message">{{ message }}</p>
 
+    <button v-if="gameOver" @click="resetGame">Начать заново</button>
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const randomNumber = ref<number>(0)
-const guess = ref<number | null>(null)
-const message = ref<string>('')
-const gameOver = ref<boolean>(false)
+const randomNumber = ref(0)
+const guess = ref(null)
+const message = ref('')
+const gameOver = ref(false)
 
 
 const checkGuess = () => {
@@ -36,7 +37,7 @@ const checkGuess = () => {
     } else if (guess.value > randomNumber.value) {
       message.value = 'Слишком большое! Попробуйте еще раз.'
     } else {
-      message.value = 'Поздравляем! Вы угадали число!'
+      message.value = 'Поздравляю! Вы угадали число!'
       gameOver.value = true
     }
 
@@ -46,4 +47,15 @@ const checkGuess = () => {
 
   
 }
+
+const resetGame = () => {
+  randomNumber.value = Math.floor(Math.random() * 100) + 1
+  guess.value = null
+  message.value = ''
+  gameOver.value = false
+}
+
+// Сброс игры при создании компонента
+resetGame()
+
 </script>
