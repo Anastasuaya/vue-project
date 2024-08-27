@@ -1,7 +1,5 @@
 <template>
 
-
-
   <div id="game">
 
     <h1>Угадай число</h1>
