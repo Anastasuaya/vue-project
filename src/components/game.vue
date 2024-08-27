@@ -14,8 +14,6 @@
 
     <p v-if="message">{{ message }}</p>
 
-    <!-- <button v-if="gameOver" @click="resetGame">Начать заново</button> -->
-
   </div>
 </template>
 
