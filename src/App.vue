@@ -1,3 +1,5 @@
+
+import Game from './components/game.vue';
 <template>
 
 <VueCalc></VueCalc>
@@ -14,6 +16,7 @@
     <input v-model="newTodo" type="text">
   </form>
   
+  
 
   <HeaderComp>
     <p>Вложенный тег</p>
@@ -27,14 +30,18 @@
   <HeaderComp />
 
   <ToDoElement/> 
+
+  <game></game>
   
 </template>
+
 
 <script setup lang="ts">
 import HeaderComp from './components/HeaderComponent.vue'
 import ToDoElement from './components/ToDoElement.vue'
 import {ref} from 'vue'
 import VueCalc from './components/VueCalc.vue'
+import game from './components/game.vue'
 const newTodo = ref('')
 
 const select = ref('All')
@@ -58,6 +65,8 @@ const message = ref('')
 
 message.value = 'Hello Vue!'
 
+
+
 </script>
 
 <style scoped>
@@ -65,3 +74,4 @@ h1 {
   user-select: none;
 }
 </style>
+
