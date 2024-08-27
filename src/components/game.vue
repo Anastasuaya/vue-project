@@ -1,6 +1,6 @@
 <template>
 
-  <div id="game">
+  <div>
 
     <h1>Угадай число</h1>
 
