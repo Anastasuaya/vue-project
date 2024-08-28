@@ -32,6 +32,8 @@ import Game from './components/game.vue';
   <ToDoElement/> 
 
   <game></game>
+
+  <ColorPalette></ColorPalette>
   
 </template>
 
@@ -41,7 +43,8 @@ import HeaderComp from './components/HeaderComponent.vue'
 import ToDoElement from './components/ToDoElement.vue'
 import {ref} from 'vue'
 import VueCalc from './components/VueCalc.vue'
-import game from './components/game.vue'
+// import game from './components/game.vue'
+import ColorPalette from './components/ColorPalette.vue'
 const newTodo = ref('')
 
 const select = ref('All')
