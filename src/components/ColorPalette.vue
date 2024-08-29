@@ -116,7 +116,7 @@ const message = ref('')
     width: 100px;
     height: 100px;
     margin: 5px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
