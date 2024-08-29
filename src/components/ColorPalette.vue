@@ -1,9 +1,9 @@
 <template>
 
-  <h1>Create new color</h1>
+     <h1>Create new color</h1>
 
   <div>
-    <form @submit.prevent="addColor">
+    <form @submit.prevent="addColor" class="container">
       <p>Color</p>
       <input v-model="colorName">
       <p>Type</p>
@@ -16,11 +16,13 @@
       <p>Code</p>
       <input v-model="colorCode">
 
-      <button type="submit">Save</button>
+      <button type="submit" style="margin-top: 15px;">Save</button>
+
+      <p v-if="message" style="color: red; font-size: 25px;">{{ message }}</p>
 
     </form>
 
-    <h2>All colors</h2>
+   <h2>All colors</h2>
 
     <div class="color-palette">
       <div class="color-box" 
@@ -30,137 +32,81 @@
         {{ color.name }}
       </div>
     </div>
-  </div>
+
+  </div>  
 
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 
-
+      
 
 interface Color {
   name: string;
   type: string;
   code: string;
+  message: string;
 }
 
       const colorName = ref('')
       const colorType = ref('')
       const colorCode = ref('')
       const colors = ref<Color[]>([])
+const message = ref('')
   
       const validateName = (name: string) => {
-        const nameLower = name.toLowerCase();
-        return colors.value.every(color => color.name.toLowerCase() !== nameLower) && /^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name);
+        const nameLower = name.toLowerCase()
+        return colors.value.every(color => color.name.toLowerCase() !== nameLower) && /^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name)
       };
   
       const validateColorCode = (type: string, code: string) => {
         if (type === 'RGB') {
-          return /^rgb\(\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*\)$/.test(code);
+          return /^rgb\(\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*\)$/.test(code)
         }
         if (type === 'RGBA') {
           return /^rgba\(\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*(0|0?\.\d+|1(\.0)?)\s*\)$/.test(code)
         }
         if (type === 'HEX') {
-          return /^#[A-Fa-f0-9]{6}$/.test(code);
+          return /^#[A-Fa-f0-9]{6}$/.test(code)
         }
-        return false;
-      };
+        return false
+      }
   
       const addColor = () => {
         if (!validateName(colorName.value)) {
-          alert('Некорректное название цвета.')
+          message.value = 'Некорректное название цвета'
           return
         }
         if (!validateColorCode(colorType.value, colorCode.value)) {
-          alert('Некорректный код цвета.')
+          message.value = 'Некорректный код цвета'
           return
         }
         colors.value.push({
           name: colorName.value,
           type: colorType.value,
           code: colorCode.value,
+          message: message.value,
         });
         colorName.value = ''
         colorType.value = ''
         colorCode.value = ''
+        message.value = ''
 
- return { colorName, colorType, colorCode, colors, addColor }      
+ return { colorName, colorType, colorCode, colors, addColor, message }      
       }
-     
-    
-  
- 
 
 </script>
 
-<style></style>
+<style>
 
+.container {
+ display: grid;
+ justify-content: space-around;
+}
 
-<!--   
-  <script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  
-  interface Color {
-    name: string;
-    type: string;
-    code: string;
-  }
-  
-  export default defineComponent({
-    name: 'ColorPalette',
-    setup() {
-      const colorName = ref('');
-      const colorType = ref('');
-      const colorCode = ref('');
-      const colors = ref<Color[]>([]);
-  
-      const validateName = (name: string) => {
-        const nameLower = name.toLowerCase();
-        return colors.value.every(color => color.name.toLowerCase() !== nameLower) && /^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name);
-      };
-  
-      const validateColorCode = (type: string, code: string) => {
-        if (type === 'RGB') {
-          return /^rgb\(\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*\)$/.test(code);
-        }
-        if (type === 'RGBA') {
-          return /^rgba\(\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*([0-2]?\d{0,2}|255)\s*,\s*(0|0?\.\d+|1(\.0)?)\s*\)$/.test(code);
-        }
-        if (type === 'HEX') {
-          return /^#[A-Fa-f0-9]{6}$/.test(code);
-        }
-        return false;
-      };
-  
-      const addColor = () => {
-        if (!validateName(colorName.value)) {
-          alert('Некорректное название цвета.');
-          return;
-        }
-        if (!validateColorCode(colorType.value, colorCode.value)) {
-          alert('Некорректный код цвета.');
-          return;
-        }
-        colors.value.push({
-          name: colorName.value,
-          type: colorType.value,
-          code: colorCode.value,
-        });
-        colorName.value = '';
-        colorType.value = '';
-        colorCode.value = '';
-      };
-  
-      return { colorName, colorType, colorCode, colors, addColor };
-    },
-  });
-  </script>
-  
-  <style scoped>
-  .color-palette {
+.color-palette {
     display: flex;
     flex-wrap: wrap;
   }
@@ -168,11 +114,13 @@ interface Color {
     width: 100px;
     height: 100px;
     margin: 5px;
-    border: 1px solid #000;
+    border: 1px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
   }
-  </style> -->
+
+</style>
+

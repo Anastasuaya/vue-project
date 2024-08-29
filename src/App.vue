@@ -3,6 +3,7 @@
 
 <VueCalc></VueCalc>
 
+<hr>
 
 <select v-model="select">
   <option value="All">All</option>
@@ -15,7 +16,7 @@
     <input v-model="newTodo" type="text">
   </form>
   
-  
+<hr>
 
   <HeaderComp>
     <p>Вложенный тег</p>
@@ -39,6 +40,9 @@
 <hr>
 
   <ColorPalette></ColorPalette>
+
+<hr>
+
 </template>
 
 
