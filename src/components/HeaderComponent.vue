@@ -47,38 +47,3 @@ h1 {
   user-select: none;
 }
 </style>
-
-
-<!-- <template>
-    <div>
-      <h1>Добавить новый цвет</h1>
-      <form @submit.prevent="addColor">
-        <label for="colorName">Название цвета:</label>
-        <input v-model="colorName" id="colorName" required />
-  
-        <label for="colorType">Тип цвета:</label>
-        <select v-model="colorType" required>
-          <option value="">Выберите тип</option>
-          <option value="RGB">RGB</option>
-          <option value="RGBA">RGBA</option>
-          <option value="HEX">HEX</option>
-        </select>
-  
-        <label for="colorCode">Код цвета:</label>
-        <input v-model="colorCode" id="colorCode" required />
-  
-        <button type="submit">Сохранить</button>
-      </form>
-  
-      <h2>Палитра цветов</h2>
-      <div class="color-palette">
-        <div 
-          class="color-box" 
-          v-for="(color, index) in colors" 
-          :key="index" 
-          :style="{ backgroundColor: color.code }">
-          {{ color.name }}
-        </div>
-      </div>
-    </div>
-  </template>

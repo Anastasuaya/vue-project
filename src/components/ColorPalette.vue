@@ -1,6 +1,6 @@
-<!-- <template>
+<template>
 
-  <h2>Create new color</h2>
+  <h1>Create new color</h1>
 
   <div>
     <form @submit.prevent="addColor">
@@ -35,10 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import {defineComponent, ref } from 'vue';
+import { ref } from 'vue';
 
 
-const message = ref('')
+
 
 interface Color {
   name: string;
@@ -97,7 +97,7 @@ interface Color {
 </script>
 
 <style></style>
- -->
+
 
 <!--   
   <script lang="ts">
