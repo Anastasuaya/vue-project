@@ -6,7 +6,7 @@
       <div style="font-size: 22px; height: 12px; text-align: left;">{{ calcStr }}</div>
       <div style="font-size: 22px; height: 12px; text-align: left; padding: 10px;">{{ calcCurrentStr }}</div>
     </div>
-    <div style="display: flex;">
+    <div style="display: flex; justify-content: center;">
       <div>
         <div style="display: flex;">
           <button @click="calcEvents('1')">1</button>

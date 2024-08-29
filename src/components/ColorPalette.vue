@@ -1,8 +1,10 @@
 <template>
 
-     <h1>Create new color</h1>
+    
+  <div style="background-color: teal; padding: 7px 20px 20px 20px;">
 
-  <div>
+ <h1>Create new color</h1>
+
     <form @submit.prevent="addColor" class="container">
       <p>Color</p>
       <input v-model="colorName">
@@ -18,7 +20,7 @@
 
       <button type="submit" style="margin-top: 15px;">Save</button>
 
-      <p v-if="message" style="color: red; font-size: 25px;">{{ message }}</p>
+      <p v-if="message" style="color: rgb(92, 26, 26); font-size: 25px; font-weight: bold;" >{{ message }}</p>
 
     </form>
 
@@ -99,7 +101,7 @@ const message = ref('')
 
 </script>
 
-<style>
+<style scoped>
 
 .container {
  display: grid;
