@@ -3,6 +3,13 @@
 
 <VueCalc></VueCalc>
 
+<button>
+  <a href="https://csstriggers.com/">css triggers</a>
+</button>
+
+<button>
+  <a href="https://gsap.com/">GSAP</a>
+</button>
 <hr>
 
 <select v-model="select">
@@ -43,6 +50,8 @@
 
 <hr>
 
+<Train></Train>
+
 </template>
 
 
@@ -53,6 +62,7 @@ import {ref} from 'vue'
 import VueCalc from './components/VueCalc.vue'
 import game from './components/game.vue'
 import ColorPalette from './components/ColorPalette.vue'
+import Train from './components/Train.vue'
 
 const newTodo = ref('')
 
