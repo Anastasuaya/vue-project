@@ -2,14 +2,18 @@
 <template>
 
 <div>
-  <p></p>
+  <h1>Train tickets</h1>
+  <div style="display: flex; align-items: center;">
+      <p style="padding-right: 10px;">direction:</p>
   <select v-model="select">
   <option value="">Select type</option>
   <option value="Sochi">Sochi-Krasnodar 1</option>
   </select>
-  <p></p>
+  <p style="padding-right: 10px; padding-left: 10px;">date:</p>
   <input type="text">
   <button>Search</button>
+  </div>
+
 </div>
 
 <hr>
@@ -51,7 +55,7 @@
 
 <hr>
 
-<p>Total price</p>
+<p>Total price:</p>
 <button type="submit">Pay</button>
 </template>
 
