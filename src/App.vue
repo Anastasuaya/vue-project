@@ -3,6 +3,11 @@
 
 <VueCalc></VueCalc>
 
+<div>
+    <label :for="id">{{ labelText }}</label>
+    <input :id="id" type="text" :value="modelValue" @input="$emit('update:modelValue', ($event?.target as HTMLInputElement).value)">
+  </div>
+
 <button>
   <a href="https://csstriggers.com/">css triggers</a>
 </button>
@@ -50,7 +55,9 @@
 
 <hr>
 
-<Train></Train>
+<Train2></Train2>
+
+<hr>
 
 </template>
 
@@ -62,7 +69,11 @@ import {ref} from 'vue'
 import VueCalc from './components/VueCalc.vue'
 import game from './components/game.vue'
 import ColorPalette from './components/ColorPalette.vue'
-import Train from './components/Train.vue'
+import Train2 from './components/Train2.vue'
+
+
+defineProps(['id', 'labelText', 'modelValue'])
+defineEmits(['update:modelValue'])
 
 const newTodo = ref('')
 
