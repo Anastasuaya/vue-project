@@ -7,4 +7,4 @@ import {router} from './routes'
 const app = createApp(App)
 app.use(router)
 app.component('HeaderComp', HeaderComp)
-app.mount('#myApp')
+app.mount('#app')

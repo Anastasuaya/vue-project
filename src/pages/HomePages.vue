@@ -63,13 +63,13 @@
   
   
   <script setup lang="ts">
-  import HeaderComponent from '../components/HeaderComponent.vue'
-  import ToDoElement from './components/ToDoElement.vue'
+  import HeaderComponent from '#root/components/HeaderComponent.vue'
+  import ToDoElement from '#root/components/ToDoElement.vue'
   import {ref} from 'vue'
-  import VueCalc from './components/VueCalc.vue'
-  import game from './components/game.vue'
-  import ColorPalette from './components/ColorPalette.vue'
-  import Train2 from './components/Train2.vue'
+  import VueCalc from '#root/components/VueCalc.vue'
+  import game from '#root/components/game.vue'
+  import ColorPalette from '#root/components/ColorPalette.vue'
+  import Train2 from '#root/components/Train2.vue'
   
   defineProps(['id', 'labelText', 'modelValue'])
   defineEmits(['update:modelValue'])
