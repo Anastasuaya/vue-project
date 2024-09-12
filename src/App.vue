@@ -1,8 +1,15 @@
 <template>
   <HeaderComponent>
-    <RouterLink to="/">На главную</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/hello">Hello</RouterLink>
+    <div style="display: flex;">
+    <RouterLink to="/"><p>На главную</p></RouterLink>
+
+    <RouterLink to="/about"><p>About</p></RouterLink>
+
+    <RouterLink to="/hello"><p>Hello</p></RouterLink>   
+    
+    <RouterLink to="/CharacterCard"><p>Hello</p></RouterLink> 
+    </div>
+
   </HeaderComponent> 
   
   <RouterView></RouterView>
@@ -14,11 +21,15 @@
 </template>
 
 <script setup lang="ts">
-import HeaderComponent from '#root/components/HeaderComponent.vue';
+import HeaderComponent from '#root/components/HeaderComponent.vue'
+
 
 
 
 </script>
 
 <style scoped>
+p {
+   padding: 10px;
+}
 </style>
