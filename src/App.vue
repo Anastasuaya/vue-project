@@ -7,7 +7,7 @@
 
     <RouterLink to="/hello"><p>Hello</p></RouterLink>   
     
-    <RouterLink to="/CharacterCard"><p>Hello</p></RouterLink> 
+    <RouterLink to="/CharacterCard"><p>CharacterCard</p></RouterLink> 
     </div>
 
   </HeaderComponent> 
