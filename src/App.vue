@@ -8,6 +8,8 @@
     <RouterLink to="/hello"><p>Hello</p></RouterLink>   
     
     <RouterLink to="/CharacterCard"><p>CharacterCard</p></RouterLink> 
+
+    <RouterLink to="/idbm"></RouterLink>
     </div>
 
   </HeaderComponent> 
