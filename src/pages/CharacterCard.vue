@@ -17,10 +17,12 @@
                 </div>
             </div>
             <div class="contant" key="2" v-else-if="activeTab == 'Lancelot'">
+               <h2>Lancelot</h2> 
+                <p></p>
                 <div class="df-box">
-                    <h2>Lancelot</h2>
+                   
                     <img src="/Lancelot.png" alt="">
-                    <p></p>
+                  
                 </div>
             </div>
             <div class="contant" key="3" v-else-if="activeTab == 'Angela'">
@@ -70,10 +72,13 @@ const tabs = ref(['Granger', 'Lancelot', 'Angela', 'Layla', 'Dyrioth'])
   height: 450px;
 }
 
+.contant {
+  border: 3px solid black;
+  display: flex;
+}
 .contant img {
   width: 400px;
   height: 300px;
-  margin-top: 30px;
 }
 
 .df-box {
