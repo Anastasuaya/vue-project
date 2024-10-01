@@ -31,8 +31,7 @@
             Dead set on resisting the political marriage arranged for him by his father,
             he traveled the country and led a licentious life instead.
             After being wounded at a drunken brawl in a tavern,
-            Lancelot was rescued by Odette and finally came to realize what his heart truly yearned for.
-            The prodigal son made a repentant return and thus began his adventure across the Land of Dawn.</p>
+            Lancelot was rescued by Odette and finally came to realize what his heart truly yearned for.</p>
         </div>
         <div class="df-box">
           <img style="height: 350px; width: 540px; border-radius: 0% 0% 7% 0%;" src="/Lancelot.png" alt="">
@@ -170,7 +169,7 @@ p {
   position: absolute;
   z-index: -1;
   left: auto;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 60px;
 }
 
@@ -182,7 +181,7 @@ p {
   position: absolute;
   z-index: -1;
   left: auto;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 60px;
 }
 
